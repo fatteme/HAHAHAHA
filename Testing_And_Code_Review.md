@@ -127,16 +127,7 @@
 ### 2.3. Jest Coverage Report Screenshots for Tests Without Mocking
 
 **Coverage Results (Unmocked/Integration Tests Only):**
-```
-=============================== Coverage summary ===============================
-Statements   : 49.76% ( 748/1503 )
-Branches     : 27.51% ( 156/567 )
-Functions    : 48.55% ( 84/173 )
-Lines        : 49.65% ( 716/1442 )
-================================================================================
-Test Suites: 14 passed, 14 total
-Tests:       83 passed, 83 total
-```
+![Unmocked](images/unmocked.png)
 
 **Analysis:** Integration tests without mocking focus on the main success paths. The lower branch coverage (27.51%) is expected since unmocked tests intentionally focus on happy paths and don't simulate all error conditions (database failures, external API errors, etc.). These error scenarios are thoroughly covered in the mocked test suite. The test structure has been refactored since the previous documentation update (2025-11-04), with tests reorganized to focus on core integration scenarios while comprehensive error handling is tested in the mocked suite.
 
@@ -145,16 +136,7 @@ Tests:       83 passed, 83 total
 ### 2.4. Jest Coverage Report Screenshots for Tests With Mocking
 
 **Coverage Results (Mocked/Unit Tests Only):**
-```
-=============================== Coverage summary ===============================
-Statements   : 84.02% ( 1241/1477 )
-Branches     : 71.35% ( 396/555 )
-Functions    : 77.77% ( 133/171 )
-Lines        : 84.4% ( 1196/1417 )
-================================================================================
-Test Suites: 15 passed, 15 total
-Tests:       160 passed, 160 total
-```
+![Unmocked](images/mocked.png)
 
 **Analysis:** Mocked tests achieve strong coverage by focusing on error handling and edge cases. The higher branch coverage (71.35% vs 27.51% in unmocked tests) demonstrates that mocked tests effectively cover failure scenarios such as database errors, external API failures, authentication issues, and other exceptional conditions that are difficult or impossible to trigger in integration tests. The test structure reflects a clear separation: unmocked tests verify happy paths in real database conditions, while mocked tests comprehensively verify error handling paths.
 
